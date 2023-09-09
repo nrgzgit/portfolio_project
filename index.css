@@ -1,0 +1,526 @@
+:root {
+  /* dark mode main color */
+  --color-1: hsl(206, 97%, 15%);
+  /* light shades of dark mode color*/
+  --color-2: hsl(198, 57%, 40%);
+  --color-3: hsl(198, 43%, 48%);
+  --color-4: hsl(187, 70%, 56%);
+  --color-5: hsl(197, 51%, 69%);
+  --color-6: hsl(195, 54%, 78%);
+
+  /* light mode main color */
+  --color-7: hsl(0, 0%, 100%);
+  /* dark shades of light mode color*/
+  --color-8: hsl(240, 11%, 98%);
+  --color-9: hsl(240, 8%, 95%);
+  --color-10: hsl(240, 33%, 99%);
+  --color-11: hsl(233, 19%, 92%);
+  --color-12: hsl(200, 12%, 95%);
+
+  /* text colors */
+  --color-13: rgba(255, 255, 255, 0.2);
+  --color-14: hsl(0, 0%, 20%);
+  --color-15: hsl(210, 22%, 49%);
+  --color-16: hsl(209, 23%, 60%);
+  --color-17: hsl(211, 27%, 70%);
+  --color-18: hsl(210, 31%, 80%);
+  --color-19: hsl(212, 33%, 89%);
+  --color-20: hsl(210, 36%, 96%);
+  --color-21: hsl(207, 74%, 79%);
+
+  /* shadows */
+  --dark-shadow: 0 5px 15px var(--color-1);
+  --light-shadow: 0 5px 10px var(--color-3);
+
+  /* fonts */
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons",
+    "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+  /* misc */
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.8rem;
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--color-1);
+  color: var(--color-7);
+  font-size: 0.875rem;
+  font-weight: lighter;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding-top: 3.5rem;
+}
+
+header {
+  position: fixed;
+  width: 100vw;
+  height: 3.5rem;
+  padding: 0.2rem 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--light-shadow);
+  z-index: 10;
+
+  & nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .logo > svg {
+      width: 2.5rem;
+      fill: var(--color-1);
+    }
+
+    .links-container {
+      margin-left: auto;
+      transition: var(--transition);
+
+      .header-links {
+        width: 15rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & li {
+          list-style: none;
+
+          & a {
+            text-decoration: none;
+            color: var(--color-7);
+            font-family: var(--font-primary);
+            display: block;
+          }
+
+          & a:hover {
+            color: var(--color-6);
+          }
+        }
+
+        /* Dark Mode Toggle Switch Button */
+        .mode-toggle {
+          display: block;
+          background-color: var(--color-1);
+          color: var(--color-7);
+          transition: var(--transition);
+          width: 1.5rem;
+          height: 1.5rem;
+          border: 0.2rem solid var(--color-7);
+          border-radius: 1rem;
+          cursor: pointer;
+        }
+
+        & .mode-toggle:hover {
+          transform: scale(1.1);
+          transition: all 0.3s;
+          box-shadow: 0 0 15px var(--color-5);
+        }
+      }
+    }
+    & .nav-toggle {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--color-7);
+      background: transparent;
+      border-color: transparent;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    & .nav-toggle:hover {
+      color: var(--color-5);
+    }
+  }
+}
+
+.light-mode {
+  transition: var(--transition);
+  background: var(--color-7);
+  color: var(--color-1);
+
+  & header {
+    & nav {
+      & .links-container {
+        .header-links > li > a {
+          color: var(--color-1);
+        }
+
+        & .header-links > li > a:hover {
+          color: var(--color-5);
+        }
+
+        .mode-toggle {
+          background: var(--color-7);
+          border: 0.25rem solid var(--color-1);
+        }
+
+        & .mode-toggle:hover {
+          border-color: var(--color-1);
+          box-shadow: 0 0 20px var(--color-5);
+        }
+      }
+    }
+  }
+
+  & .email-btn {
+    background: var(--color-1);
+    color: var(--color-7);
+    border: 0.2rem solid var(--color-1);
+  }
+
+  & .scrollTop-btn {
+    background: var(--color-7);
+    color: var(--color-1);
+    border: 0.2rem solid var(--color-1);
+  }
+
+  & footer > .footer-links > li > a {
+    color: var(--color-1);
+  }
+}
+
+.section {
+  display: grid;
+  place-items: center;
+  width: 95vw;
+  height: 100vh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+#about {
+  & h1 {
+    font-size: 4rem;
+    color: var(--color-5);
+    text-align: center;
+  }
+
+  & .about {
+    display: flex;
+    justify-content: space-between;
+
+    & .about-details {
+      width: 40vw;
+      height: 50vh;
+      overflow: hidden;
+
+      & p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+      }
+
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  & .instruments {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 150px));
+
+    & li {
+      list-style-type: circle;
+    }
+  }
+
+  & .highlight {
+    background-image: linear-gradient(
+      90deg,
+      var(--color-1) 50%,
+      var(--color-5) 0
+    );
+    transition: background-position 2s;
+    background-size: 200%;
+    background-position: 0;
+  }
+
+  & .highlighted {
+    background-position: -100%;
+  }
+}
+
+#projects {
+  & .projects-intro {
+    & h1 {
+      font-size: 2rem;
+      color: var(--color-5);
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+
+    & p {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  }
+
+  & .projects-container {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+
+    & .project-window {
+      position: relative;
+      overflow: hidden;
+      width: 33%;
+      height: auto;
+      border: 1px solid var(--color-5);
+      border-radius: var(--radius);
+
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Project description and link that appear on hover (over the project window)*/
+      & figcaption {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+        transition: opacity 0.3s ease-in-out;
+        padding: 1rem;
+
+        & p {
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: 350;
+          color: var(--color-7);
+        }
+
+        & .project-opener {
+          text-decoration: none;
+          color: var(--color-7);
+          margin-top: 1rem;
+          padding: 0.6rem 1.2rem;
+          border: 2px solid var(--color-7);
+          border-radius: var(--radius);
+
+          & span {
+            font-size: 1.2rem;
+            margin-right: 0.3rem;
+          }
+
+          &:hover {
+            background-color: var(--color-5);
+            color: var(--color-7);
+            transition: all 0.2s ease-in-out;
+          }
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+#contacts {
+  .contact-window {
+    display: grid;
+    place-items: center;
+    margin: auto 0;
+    text-align: center;
+
+    & h1 {
+      font-size: 2rem;
+      color: var(--color-5);
+    }
+
+    & p {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .email-btn {
+      text-decoration: none;
+      color: var(--color-7);
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      border: 2px solid var(--color-7);
+      border-radius: var(--radius);
+      transition: var(--transition);
+
+      & span {
+        margin-right: 0.3rem;
+      }
+
+      &:hover {
+        background-color: var(--color-5);
+        color: var(--color-7);
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover i {
+        transform: rotate(360deg);
+        transition: all 0.6s;
+      }
+    }
+  }
+}
+
+footer {
+  display: grid;
+  place-items: center;
+  padding: 1.2rem 3rem;
+  font-size: 0.85rem;
+  box-shadow: var(--light-shadow);
+
+  .footer-links {
+    width: 7rem;
+    display: flex;
+    justify-content: space-between;
+
+    & li {
+      list-style: none;
+
+      & a {
+        text-decoration: none;
+        color: var(--color-7);
+      }
+
+      &:hover i {
+        transform: scale(1.2);
+        transition: all 0.2s;
+        color: var(--color-5);
+      }
+    }
+  }
+
+  .scrollTop-btn {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--color-7);
+    border: 0.2rem solid var(--color-7);
+    border-radius: 1rem;
+    visibility: hidden;
+  }
+
+  & .scrollTop-btn:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+    color: var(--color-5);
+    border-color: var(--color-5);
+  }
+}
+
+.animation-area {
+  background: var(--color-1);
+  background: linear-gradient(to right, var(--color-1), var(--color-5));
+  width: 100%;
+  height: 100vh;
+}
+
+.box-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  /* overflow: hidden; */
+}
+
+.box-area li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--color-13);
+  animation: animate 20s linear infinite;
+  bottom: -5rem;
+}
+
+.box-area li:nth-child(1) {
+  left: 86%;
+  width: 7rem;
+  height: 7rem;
+  animation-delay: 0s;
+}
+
+.box-area li:nth-child(2) {
+  left: 5%;
+  width: 3rem;
+  height: 3rem;
+  animation-duration: 10s;
+}
+
+.box-area li:nth-child(3) {
+  left: 70%;
+  width: 9rem;
+  height: 9rem;
+}
+
+.box-area li:nth-child(4) {
+  left: 42%;
+  width: 10rem;
+  height: 10rem;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+
+.box-area li:nth-child(5) {
+  left: 65%;
+  width: 5rem;
+  height: 5rem;
+  animation-delay: 0s;
+}
+
+.box-area li:nth-child(6) {
+  left: 15%;
+  width: 8rem;
+  height: 8rem;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}

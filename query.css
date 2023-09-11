@@ -20,6 +20,12 @@
     justify-content: space-between;
   }
 
+  .light-mode {
+    &.links-container {
+      background: var(--color-5);
+    }
+  }
+
   .links-container {
     display: none;
     position: absolute;
@@ -43,7 +49,7 @@
   }
 
   .links-container:hover {
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(1000px);
     box-shadow: var(--light-shadow);
   }
 
@@ -60,21 +66,8 @@
     & .about {
       display: flex;
       justify-content: space-between;
-
-      & .about-details {
-        & p {
-          font-size: 0.9rem;
-          margin-block-start: 1em;
-          margin-block-end: 1em;
-          margin-inline-start: 0px;
-          margin-inline-end: 0px;
-        }
-
-        & img {
-          display: block;
-          width: 100%;
-          height: 100%;
-        }
+      & p {
+        font-size: 1rem;
       }
     }
   }

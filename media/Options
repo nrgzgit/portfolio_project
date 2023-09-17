@@ -1,0 +1,28 @@
+Projects > Instruments (version 1)
+
+          <ul class="instruments">
+            <li>
+              <img src="./media/svgs/html-124-svgrepo-com.svg" alt="" width="50px">
+            </li>
+            <li>
+              <img src="./media/svgs/css3-02-svgrepo-com.svg" alt="" width="50px">
+            </li>
+            <li>
+              <img src="./media/svgs/javascript-155-svgrepo-com.svg" alt="" width="55px">
+            </li>
+            <li>
+              <img src="./media/svgs/typescript-svgrepo-com.svg" alt="" width="55px">
+            </li>
+            <li>
+              <img src="./media/svgs/react-svgrepo-com.svg" alt="" width="50px">
+            </li>
+            <li>
+              <img src="./media/svgs/angular-svgrepo-com%20(1).svg" alt="" width="60px">
+            </li>
+            <li>
+              <img src="./media/svgs/bootstrap-svgrepo-com.svg" alt="" width="60px">
+            </li>
+            <li>
+              <img src="./media/svgs/tailwind-svgrepo-com.svg" alt="" width="50px">
+            </li>
+          </ul>

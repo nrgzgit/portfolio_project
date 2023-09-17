@@ -59,15 +59,17 @@
 
   #about {
     & h1 {
-      font-size: 2rem;
-      color: var(--color-5);
+      font-size: 2.5rem;
     }
-
+    & h2 {
+      font-size: 1.5rem;
+    }
     & .about {
       display: flex;
       justify-content: space-between;
       & p {
         font-size: 1rem;
+        line-height: 1.3rem;
       }
     }
   }
@@ -77,8 +79,51 @@
   }
 
   #projects > .projects-container .project-window {
-    width: 60vw;
-    height: auto;
+    width: 70vw;
     margin: 0.5rem;
   }
+
+  #projects > .projects-container > .projects-outro > ul > li {
+    font-size: 1rem;
+    display: grid;
+    place-content: center;
+    list-style: none;
+    margin: 1rem;
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid var(--color-10);
+    border-radius: 50%;
+  }
 }
+
+/*@media screen and (max-width: 960px) {*/
+
+/*  #about {*/
+/*    & h1 {*/
+/*      font-size: 2.5rem;*/
+/*      color: var(--color-5);*/
+/*    }*/
+/*    & h2 {*/
+/*      font-size: 1.5rem;*/
+/*      color: var(--color-5);*/
+/*    }*/
+/*    & .about {*/
+/*      display: flex;*/
+/*      justify-content: space-between;*/
+/*      & .about-details > p {*/
+/*        font-size: 1rem;*/
+/*        line-height: 0.5rem;*/
+/*      }*/
+/*    }*/
+/*  }*/
+
+/*  .projects-container {*/
+/*    flex-direction: column;*/
+/*  }*/
+
+/*  #projects > .projects-container .project-window {*/
+/*    width: 60vw;*/
+/*    height: auto;*/
+/*    margin: 0.5rem;*/
+/*  }*/
+/*}*/

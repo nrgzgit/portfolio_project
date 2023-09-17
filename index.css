@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Gruppo');
+
 :root {
   /* dark mode main color */
-  /* --color-1: #002a4a; */
-  --color-1: #0b192f;
+   --color-1: #022946;
+  /*--color-1: #0b192f;*/
   /* light shades of dark mode color*/
   --color-2: hsl(198, 57%, 40%);
   --color-3: hsl(198, 43%, 48%);
@@ -11,6 +13,7 @@
 
   /* light mode main color */
   --color-7: hsl(0, 0%, 100%);
+
   /* dark shades of light mode color*/
   --color-8: hsl(240, 11%, 98%);
   --color-9: hsl(240, 8%, 95%);
@@ -34,7 +37,7 @@
   --light-shadow: 0 5px 10px var(--color-3);
 
   /* fonts */
-  --font-primary: "Montserrat", sans-serif;
+  --font-primary: 'Gruppo', regular;
   --font-secondary: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons",
     "Apple Legacy Chevron", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
@@ -61,16 +64,16 @@ html {
 body {
   font-family: var(--font-primary);
   background: var(--color-1);
-  color: var(--color-7);
+  color: var(--color-10);
   font-size: 0.875rem;
-  font-weight: lighter;
+  /*font-weight: lighter;*/
 }
 
 main {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  padding-top: 3.5rem;
+  padding: 3.5rem 2rem;
 }
 
 h1,
@@ -95,7 +98,7 @@ header {
   & nav {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     & .logo > svg {
       width: 2.5rem;
@@ -106,7 +109,7 @@ header {
       margin-left: auto;
       transition: var(--transition);
       .header-links {
-        width: 15rem;
+        width: 18rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -116,12 +119,13 @@ header {
 
           & a {
             text-decoration: none;
-            color: var(--color-7);
+            color: var(--color-10);
             font-family: var(--font-primary);
+            font-size: 1.1rem;
           }
 
           & a:hover {
-            color: var(--color-6);
+            color: var(--color-21);
           }
         }
 
@@ -129,7 +133,7 @@ header {
         .mode-toggle {
           display: block;
           background-color: var(--color-1);
-          color: var(--color-7);
+          color: var(--color-10);
           transition: var(--transition);
           width: 1.5rem;
           height: 1.5rem;
@@ -156,21 +160,39 @@ header {
     }
 
     & .nav-toggle:hover {
-      color: var(--color-5);
+      color: var(--color-21);
     }
   }
 }
 
-.light-mode {
-  transition: var(--transition);
-  background: var(--color-10);
-  color: var(--color-1);
 
+.light-mode {
+  background: linear-gradient(-45deg, #facbf6, #b3d5f5, #cac0f1, #da8eb9);
+  background-size: 2000% 2000%;
+  animation: gradient 10s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.light-mode {
   & header {
+    box-shadow: 0 2px 2px white;
     & nav {
       & .links-container {
         .header-links > li > a {
-          color: var(--color-1);
+          color: var(--color-10);
         }
 
         & .header-links > li > a:hover {
@@ -178,29 +200,41 @@ header {
         }
 
         .mode-toggle {
-          background: var(--color-7);
-          border: 0.25rem solid var(--color-1);
+          background: transparent;
+          border: 0.25rem solid var(--color-10);
         }
 
         & .mode-toggle:hover {
           border-color: var(--color-1);
-          box-shadow: 0 0 20px var(--color-5);
+          box-shadow: 0 0 20px var(--color-6);
         }
       }
     }
     .nav-toggle {
-      color: var(--color-1);
+      color: var(--color-10);
     }
   }
 
-  .animation-area {
-    background: var(--color-7);
-    background: linear-gradient(to left, var(--color-5), var(--color-7));
-    width: 100%;
+  #about {
+    & h1 {
+      color: var(--color-10)
+    }
+    & h2 {
+      color: var(--color-10)
+    }
+    & .about-details p {
+      color: var(--color-10)
+    }
   }
-
+  .animation-area {
+    background: transparent;
+    width: 100%;
+    box-shadow: 0 3px 5px var(--color-10);
+  }
   .box-area li {
-    background: var(--color-6);
+    background: var(--color-13);
+    box-shadow: 10px 100px 10px var(--color-10);
+    border-radius: 50%;
   }
 
   & .email-btn {
@@ -210,13 +244,17 @@ header {
   }
 
   & .scrollTop-btn {
-    background: var(--color-7);
-    color: var(--color-1);
-    border: 0.2rem solid var(--color-1);
+    background: transparent;
+    color: var(--color-10);
+    border: 0.2rem solid var(--color-10);
   }
 
-  & footer > .footer-links > li > a {
-    color: var(--color-1);
+  & footer {
+    border-top: 1px solid var(--color-10);
+    box-shadow: none;
+    & footer > .footer-links > li > a {
+      color: var(--color-1);
+    }
   }
 }
 
@@ -226,24 +264,37 @@ header {
   flex-direction: column;
   align-items: center;
   max-width: 94rem;
-  height: 100vh;
-  padding: 6rem 2rem;
+  height: auto;
+  padding-top: 6rem;
 }
 
 #about {
+/*height: 100vh;*/
   & h1 {
-    font-size: 3.5rem;
-    color: var(--color-5);
+    font-size: 4rem;
+    color: var(--color-7);
     text-align: center;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
   }
+  & h2 {
+    font-size: 2rem;
+    color: var(--color-6);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+
   & .about {
     display: grid;
     grid-template-columns: 2fr 2fr;
     & p {
+      color: var(--color-10);
       font-size: 1.1rem;
       line-height: 1.6rem;
       margin-block-start: 1rem;
       margin-block-end: 2rem;
+      padding-right: 2rem;
     }
   }
 }
@@ -254,18 +305,21 @@ header {
     & h1 {
       font-size: 2rem;
       color: var(--color-5);
-      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+      font-weight: 600;
     }
 
     & p {
-      font-size: 1.3rem;
-      line-height: 2rem;
+      font-size: 1.5rem;
+      line-height: 1.7rem;
     }
   }
 
   & .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    /*grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));*/
     gap: 1rem;
     margin: 3rem 0 0;
 
@@ -274,13 +328,14 @@ header {
       overflow: hidden;
       width: auto;
       height: auto;
-      border: 1px solid var(--color-5);
+      border: 2px solid var(--color-10);
       border-radius: var(--radius);
 
       & img {
         display: block;
         width: 100%;
         height: 100%;
+        padding: 1rem;
       }
 
       /* Project description and link that appear on hover (over the project window)*/
@@ -300,30 +355,32 @@ header {
         transition: opacity 0.3s ease-in-out;
         padding: 1rem;
 
+
         & p {
           text-align: center;
           font-size: min(1.2rem, 100vw);
           font-weight: 350;
           color: var(--color-7);
+          line-height: 2rem;
         }
 
         & .project-opener {
           text-decoration: none;
-          color: var(--color-7);
-          margin-top: 1rem;
-          padding: 0.6rem 1.2rem;
-          border: 2px solid var(--color-7);
-          border-radius: var(--radius);
+          color: var(--color-10);
+          padding: 0.4rem 0.8rem;
+          border: 1px solid var(--color-10);
+          border-radius: 0.4rem;
+          margin: 1rem;
 
           & span {
-            font-size: min(1rem, 100vw);
+            font-size: min(0.9rem, 100vw);
             margin-right: 0.3rem;
           }
 
           &:hover {
-            background-color: var(--color-5);
-            color: var(--color-7);
-            transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in;
+            background: var(--color-10);
+            color: var(--color-21);
           }
         }
 
@@ -341,17 +398,33 @@ header {
     }
     & .instruments {
       display: grid;
-      grid-template-columns: repeat(4, minmax(6rem, 10rem));
-      margin: 3rem 0 0;
+      grid-template-columns: repeat(auto-fill, minmax(6rem, 10rem));
+      gap: 1rem;
+      place-content: center;
+      margin-top: 2rem;
 
-      & li > svg {
-        width: 50px;
+      & li {
+        font-size: 1.1rem;
+        display: grid;
+        place-content: center;
+        list-style: none;
+        margin: 1rem;
+        width: 6.5rem;
+        height: 6.5rem;
+        border: 2px solid var(--color-10);
+        border-radius: 50%;
+        box-shadow: var(--light-shadow);
+      }
+      & li:hover {
+        transform: scale(1.1);
+        transition: all 0.2s ease-in-out;
       }
     }
   }
 }
 
 #contacts {
+  height: 80vh;
   .contact-window {
     display: grid;
     place-items: center;
@@ -360,21 +433,21 @@ header {
 
     & h1 {
       font-size: 2rem;
-      color: var(--color-5);
+      color: var(--color-21);
     }
 
     & p {
       font-size: 1.2rem;
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
 
     .email-btn {
       text-decoration: none;
       color: var(--color-7);
       margin-top: 2rem;
-      padding: 0.6rem 1.2rem;
-      border: 2px solid var(--color-7);
-      border-radius: var(--radius);
+      padding: 0.5rem 1.1rem;
+      border: 1px solid var(--color-10);
+      border-radius: 0.6rem;
       transition: var(--transition);
 
       & span {
@@ -382,7 +455,7 @@ header {
       }
 
       &:hover {
-        background-color: var(--color-5);
+        background-color: var(--color-21);
         color: var(--color-7);
         transition: all 0.2s ease-in-out;
       }
@@ -418,7 +491,7 @@ footer {
       &:hover i {
         transform: scale(1.2);
         transition: all 0.2s;
-        color: var(--color-5);
+        color: var(--color-21);
       }
     }
   }
@@ -441,7 +514,7 @@ footer {
     transform: scale(1.1);
     transition: all 0.3s;
     color: var(--color-5);
-    border-color: var(--color-5);
+    border-color: var(--color-21);
   }
 }
 
@@ -449,6 +522,9 @@ footer {
   background: var(--color-1);
   background: linear-gradient(to right, var(--color-1), var(--color-5));
   width: 100%;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: var(--light-shadow);
 }
 
 .box-area {
@@ -457,7 +533,7 @@ footer {
   left: 0;
   width: 100%;
   height: 95%;
-  /* overflow: hidden; */
+   /*overflow: hidden;*/
 }
 
 .box-area li {
@@ -469,6 +545,8 @@ footer {
   background: var(--color-13);
   animation: animate 20s linear infinite;
   bottom: -5rem;
+  box-shadow: var(--light-shadow);
+border-radius: 15%;
 }
 
 .box-area li:nth-child(1) {
@@ -476,6 +554,7 @@ footer {
   width: 7rem;
   height: 7rem;
   animation-delay: 0s;
+
 }
 
 .box-area li:nth-child(2) {
@@ -483,6 +562,7 @@ footer {
   width: 3rem;
   height: 3rem;
   animation-duration: 10s;
+
 }
 
 .box-area li:nth-child(3) {
@@ -521,5 +601,22 @@ footer {
   100% {
     transform: translateY(-800px) rotate(360deg);
     opacity: 0;
+  }
+}
+
+.appearing-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: appear 1s forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

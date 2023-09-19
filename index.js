@@ -14,7 +14,6 @@ navToggle.addEventListener("click", () => {
 });
 
 //Scroll Back To Top Button (appears on 800px scroll)
-
 function checkScrollPosition() {
   if (window.scrollY > 800) {
     scrollTop.style.visibility = "visible";

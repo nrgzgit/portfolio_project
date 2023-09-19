@@ -13,23 +13,23 @@
       src="https://kit.fontawesome.com/ab94258cce.js"
       crossorigin="anonymous"
     ></script>
-
     <title>test</title>
   </head>
   <body>
-
     <header id="home">
       <nav id="nav">
         <a href="#" class="logo">
-          <img src="./media/svgs/letter-n-svgrepo-com%20(2).svg" alt="" width="45px">
+          <div class="key">
+             <span>N</span>
+          </div>
         </a>
         <div class="links-container">
           <ul class="header-links">
-            <li><a href="#about" class="scroll-link">About Me</a></li>
-            <li><a href="#projects" class="scroll-link">Projects</a></li>
-            <li><a href="#contacts" class="scroll-link">Contact</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contacts">Contact</a></li>
             <!-- Dark/Light Mode Toggle Switch -->
-            <button onclick="lightMode()" class="mode-toggle"></button>
+            <li><button onclick="lightMode()" class="mode-toggle"></button></li>
           </ul>
         </div>
         <button class="nav-toggle">
@@ -38,10 +38,9 @@
       </nav>
     </header>
     <main>
-      <section id="about" class="section appearing-text">
+      <section id="about" class="section">
         <h1>Hello, World!</h1>
-        <div class="type"><h2>I'm Nargiz, Designer & Front-End Developer Wannabe </h2></div>
-
+        <h2>I'm Nargiz, Designer & Front-End Developer Wannabe </h2>
         <div class="about">
           <div class="about-details">
             <p>
@@ -50,12 +49,10 @@
             <p>
               As I build this portfolio, I see it not just as a showcase of my current abilities but also as a testament to my ongoing commitment to learning. Each project I undertake is an opportunity to push my boundaries, experiment with new techniques, and refine my craft.
             </p>
-
             <p>I'm excited to share my journey with you through this portfolio, and I invite you to join me on this ever-evolving path of exploration and innovation. </p>
           </div>
-
-          <div class="animation-area">
-            <ul class="box-area">
+          <div class="floating-elements">
+            <ul class="floating-area">
               <li></li>
               <li></li>
               <li></li>
@@ -66,82 +63,80 @@
           </div>
         </div>
       </section>
-      <section id="projects" class="section appearing-text">
-        <div class="projects-intro">
-          <h1>Projects</h1>
+      <section id="projects" class="section">
+          <h2>Projects</h2>
           <p>
             Here's a glimpse into my portfolio projects, where I've applied gained knowledge to create engaging web experiences:
           </p>
-        </div>
         <ul class="projects-container">
           <li class="project-window">
-            <img src="/media/notes.png" alt="Notebook"/>
+            <img src="/media/png_files/notes.png" alt="Notebook"/>
             <figcaption>
-              <p>
-                Note Taking App
-              </p>
+              <h3>
+                Note-Taking App
+              </h3>
               <span>
                 HTML, CSS, Bootstrap, JS
               </span>
-              <a href="#" class="project-opener">
+              <a href="#" class="button">
                 <span>take a look</span>
                 <i
-                  class="fa-solid fa-arrow-up-right-from-square fa-sm"
+                  class="fa-solid fa-arrow-up-right-from-square fa-xs"
                   aria-hidden="true"
                 ></i>
               </a>
             </figcaption>
           </li>
           <li class="project-window">
-          <img src="/media/bag.png" alt="Shopping Bag"/>
+          <img src="/media/png_files/bag.png" alt="Shopping Bag"/>
             <figcaption>
-              <p>
+              <h3>
                 E-Commerce Website
-              </p>
+              </h3>
               <span>HTML, CSS, Tailwind, JS, React</span>
-              <a href="#" class="project-opener">
+              <a href="#" class="button">
                 <span>take a look</span>
                 <i
-                  class="fa-solid fa-arrow-up-right-from-square fa-sm"
+                  class="fa-solid fa-arrow-up-right-from-square fa-xs"
                   aria-hidden="true"
                 ></i>
               </a>
             </figcaption>
           </li>
           <li class="project-window">
-            <img src="/media/converter.png"alt="Units Converter"/>
+            <img src="/media/png_files/converter.png" alt="Units Converter"/>
             <figcaption>
-              <p>
+              <h3>
                 Units Converter App
-              </p>
+              </h3>
               <span>HTML, CSS, Tailwind, JS</span>
-              <a href="#" class="project-opener">
+              <a href="#" class="button">
                 <span>take a look</span>
                 <i
-                  class="fa-solid fa-arrow-up-right-from-square fa-sm"
+                  class="fa-solid fa-arrow-up-right-from-square fa-xs"
                   aria-hidden="true"
                 ></i>
               </a>
             </figcaption>
           </li>
           <li class="project-window">
-            <img src="/media/video-player.png" alt="Video Player"/>
+            <img src="/media/png_files/video-player.png" alt="Video Player"/>
             <figcaption>
-              <p>
+              <h3>
                 Immersive Scroll Website
-              </p>
+              </h3>
               <span>HTML, CSS, JS, Lenis(API)</span>
-              <a href="#" class="project-opener">
+              <a href="#" class="button">
                 <span>take a look</span>
                 <i
-                  class="fa-solid fa-arrow-up-right-from-square fa-sm"
+                  class="fa-solid fa-arrow-up-right-from-square fa-xs"
                   aria-hidden="true"
                 ></i>
               </a>
             </figcaption>
           </li>
         </ul>
-        <div class="projects-outro">
+        <div class="technologies">
           <p>
             Technologies that I've been using throughout my learning path:
           </p>
@@ -157,9 +152,9 @@
           </ul>
         </div>
       </section>
-      <section id="contacts" class="section appearing-text">
+      <section id="contacts" class="section">
         <div class="contact-window">
-          <h1>Contact Me</h1>
+          <h2>Contact Me</h2>
           <p>
             Feel free to reach out to me for any inquiries or collaboration opportunities.
           </p>
@@ -169,26 +164,25 @@
             class="email-btn"
           >
             <span>Send Email</span>
-            <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+            <i class="fa-regular fa-paper-plane fa-sm" aria-hidden="true"></i>
           </a>
         </div>
       </section>
     </main>
-
     <footer>
       <ul class="footer-links">
         <li>
-          <a href="#"
+          <a href="mailto:kassimovanargiz@gmail.com" target="_blank"
             ><i class="fa fa-envelope fa-lg" aria-hidden="true"></i
           ></a>
         </li>
         <li>
-          <a href="#"
+          <a href="https://github.com/nrgzgit"
             ><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i
           ></a>
         </li>
         <li>
-          <a href="#"
+          <a href="https://codepen.io/nargizkassimova"
             ><i class="fa-brands fa-codepen fa-lg" aria-hidden="true"></i
           ></a>
         </li>
@@ -200,7 +194,6 @@
         <i class="fa-solid fa-arrow-up fa-xs"></i>
       </a>
     </footer>
-
     <script src="index.js"></script>
   </body>
 </html>

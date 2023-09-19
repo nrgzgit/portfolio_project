@@ -1,60 +1,40 @@
-/* @media screen and (min-width: 769px) {
-  h1 {
-    font-size: 4rem;
-  }
-  body {
-    font-size: 1rem;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    line-height: 1;
-  }
-} */
-
 /* Media Query for Small Screens (e.g., Mobile) */
 @media screen and (max-width: 768px) {
   #nav {
     display: flex;
     justify-content: space-between;
-  }
-
-  .light-mode {
-    &.links-container {
-      background: var(--color-5);
+    .nav-toggle {
+      display: block;
+    }
+    .links-container {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 3.5rem;
+      width: 12rem;
+      height: 15rem;
+      padding: 1rem 0;
+      border-bottom-left-radius: 0.8rem;
+      backdrop-filter: blur(1000px);
+      &.active {
+        display: flex;
+      }
+      &:hover {
+        transition: var(--transition-l);
+        box-shadow: inset -20px -20px 100px var(--color-5);
+      }
+      & .header-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
     }
   }
 
-  .links-container {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 3.5rem;
-    width: 12rem;
-    height: 15rem;
-    padding: 1rem 0;
-    border-bottom-left-radius: var(--radius);
-  }
-
-  .links-container.active {
-    display: flex;
-    backdrop-filter: blur(10px);
-  }
-
-  .links-container > .header-links {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .links-container:hover {
-    backdrop-filter: blur(1000px);
-    box-shadow: var(--light-shadow);
-  }
-
-  .nav-toggle {
-    display: block;
+ .light-mode {
+   & #nav > .links-container:hover {
+      box-shadow: inset -20px -20px 100px var(--color-22);
+    }
   }
 
   #about {
@@ -62,7 +42,7 @@
       font-size: 2.5rem;
     }
     & h2 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
     & .about {
       display: flex;
@@ -73,57 +53,4 @@
       }
     }
   }
-
-  .projects-container {
-    flex-direction: column;
-  }
-
-  #projects > .projects-container .project-window {
-    width: 70vw;
-    margin: 0.5rem;
-  }
-
-  #projects > .projects-container > .projects-outro > ul > li {
-    font-size: 1rem;
-    display: grid;
-    place-content: center;
-    list-style: none;
-    margin: 1rem;
-    width: 4rem;
-    height: 4rem;
-    border: 2px solid var(--color-10);
-    border-radius: 50%;
-  }
 }
-
-/*@media screen and (max-width: 960px) {*/
-
-/*  #about {*/
-/*    & h1 {*/
-/*      font-size: 2.5rem;*/
-/*      color: var(--color-5);*/
-/*    }*/
-/*    & h2 {*/
-/*      font-size: 1.5rem;*/
-/*      color: var(--color-5);*/
-/*    }*/
-/*    & .about {*/
-/*      display: flex;*/
-/*      justify-content: space-between;*/
-/*      & .about-details > p {*/
-/*        font-size: 1rem;*/
-/*        line-height: 0.5rem;*/
-/*      }*/
-/*    }*/
-/*  }*/
-
-/*  .projects-container {*/
-/*    flex-direction: column;*/
-/*  }*/
-
-/*  #projects > .projects-container .project-window {*/
-/*    width: 60vw;*/
-/*    height: auto;*/
-/*    margin: 0.5rem;*/
-/*  }*/
-/*}*/

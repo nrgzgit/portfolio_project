@@ -3,7 +3,7 @@ const linksContainer = document.querySelector(".links-container");
 const scrollTop = document.querySelector(".scrollTop-btn");
 const date = document.getElementById("date");
 
-// Light Mode Toggle ()
+// Dark / Light Mode Toggle ()
 function lightMode() {
   document.body.classList.toggle("light-mode");
 }

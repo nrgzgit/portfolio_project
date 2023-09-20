@@ -196,7 +196,7 @@ header {
   .floating-elements {
     background: transparent;
     width: 100%;
-    box-shadow: 0 3px 5px var(--color-10);
+    box-shadow: 1px 0 1px var(--color-10);
     & .floating-area li {
       background: var(--color-13);
       box-shadow: 10px 100px 10px var(--color-10);
@@ -255,7 +255,6 @@ main {
 }
 
 #projects {
-  overflow: hidden;
   text-align: center;
   & .projects-container {
     display: grid;
@@ -407,7 +406,7 @@ footer {
   width: 100%;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
-  box-shadow: var(--light-shadow);
+  overflow: hidden;
    & .floating-area {
      position: relative;
      top: 0;
@@ -419,12 +418,12 @@ footer {
        position: absolute;
        width: 1.5rem;
        height: 1.5rem;
-       animation: animate 20s linear infinite;
+       animation: animate 15s linear infinite;
        bottom: -5rem;
        box-shadow: var(--light-shadow);
        border-radius: 9%;
        &:nth-child(1) {
-         left: 86%;
+         left: 75%;
          width: 7rem;
          height: 7rem;
          animation-delay: 0s;
@@ -436,7 +435,7 @@ footer {
          animation-duration: 10s;
        }
        &:nth-child(3) {
-       left: 70%;
+       left: 60%;
        width: 9rem;
        height: 9rem;
      }
@@ -448,7 +447,7 @@ footer {
          animation-duration: 15s;
        }
       &:nth-child(5) {
-       left: 65%;
+       left: 50%;
        width: 5rem;
        height: 5rem;
        animation-delay: 0s;
@@ -468,7 +467,7 @@ footer {
     opacity: 1;
   }
   100% {
-    transform: translateY(-800px) rotate(360deg);
+    transform: translateY(-500px) rotate(360deg);
     opacity: 0;
   }
 }

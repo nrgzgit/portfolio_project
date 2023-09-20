@@ -30,11 +30,8 @@
 
  .light-mode {
    & #nav > .links-container {
-     background: transparent;
-     backdrop-filter: blur(1000px);
-     &:hover {
-       box-shadow: inset -20px -20px 100px var(--color-22);
-     }
+     background: var(--color-26);
+     box-shadow: inset -10px -10px 80px var(--color-10);
    }
   }
 

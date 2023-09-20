@@ -5,7 +5,7 @@
   --color-2: hsl(198, 57%, 40%);
   --color-3: hsl(198, 43%, 48%);
   --color-4: hsl(187, 70%, 56%);
-  --color-5: hsl(197, 51%, 69%);
+  --color-5: hsl(197, 51%, 65%);
   --color-6: hsl(195, 54%, 78%);
   --color-7: hsl(0, 0%, 100%);
   --color-8: hsl(240, 11%, 98%);
@@ -29,10 +29,13 @@
   --color-26: hsl(209, 77%, 83%);
   --color-27: hsl(252, 64%, 84%);
   --color-28: hsl(326, 51%, 71%);
+  --color-29: hsla(0, 0%, 100%, 0.72);
+  --color-30: hsla(0, 0%, 0%, 1);
 
   /* Box Shadows */
   --dark-shadow: 0 5px 15px var(--color-1);
   --light-shadow: 0 5px 10px var(--color-3);
+  --glow-shadow: 0 0 15px var(--color-10);
 
 /* Transition Styles */
   --transition-l: all 0.3s linear;
@@ -173,7 +176,7 @@ header {
           &:hover {
             transform: scale(1.1);
             transition: var(--transition-eo);
-            box-shadow: 0 0 15px var(--color-10);
+            box-shadow: var(--glow-shadow);
           }
         }
       }
@@ -182,21 +185,21 @@ header {
 }
 
 .light-mode {
-  background: linear-gradient(-45deg, var(--color-25), var(--color-26), var(--color-27), var(--color-28));
-  background-size: 2000% 2000%;
-  animation: gradient 10s ease infinite;
+  background: linear-gradient(-90deg, var(--color-25), var(--color-26), var(--color-27));
+  background-size: 200% 300%;
   height: 100vh;
   & h2 {
     color: var(--color-10);
   }
   & header {
-    box-shadow: 0 2px 2px var(--color-10);
+    box-shadow: var(--glow-shadow);
   }
   /* Floating Elements Change in Size & Color */
   .floating-elements {
-    background: transparent;
+    background: linear-gradient(to left, var(--color-29) 0%, rgb(255 255 255 / 30%) 40%);
+    backdrop-filter: saturate(2);
+    -webkit-backdrop-filter: saturate(2);
     width: 100%;
-    box-shadow: 1px 0 1px var(--color-10);
     & .floating-area li {
       background: var(--color-13);
       box-shadow: 10px 100px 10px var(--color-10);
@@ -209,20 +212,7 @@ header {
     }
   }
   & footer {
-    border-top: var(--border-s);
-    box-shadow: none;
-  }
-}
-/* KeyFrames for Light Mode Background Animation */
-@keyframes gradient {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
+    box-shadow: var(--glow-shadow);
   }
 }
 
@@ -301,7 +291,7 @@ main {
           border-radius: 0.4rem;
           margin: 1rem;
           &:hover {
-            background: var(--color-21);
+            box-shadow: inset 0 0 8px var(--color-10);
             transition: var(--transition-eo);
           }
           & span {
@@ -355,7 +345,7 @@ main {
         margin-right: 0.3rem;
       }
       &:hover {
-        background: var(--color-21);
+        box-shadow: inset 0 0 8px var(--color-10);
       }
       &:hover i {
         transform: rotate(360deg);
@@ -377,7 +367,7 @@ footer {
       & a:hover i {
         transform: scale(1.2);
         transition: var(--transition-eo);
-        color: var(--color-21);
+
       }
   }
 /* Scroll Back To Top Button (appears on 800px scroll) */
@@ -395,8 +385,6 @@ footer {
     &:hover {
       transform: scale(1.1);
       transition: var(--transition-eo);
-      color: var(--color-21);
-      border-color: var(--color-21);
     }
   }
 }
@@ -418,7 +406,7 @@ footer {
        position: absolute;
        width: 1.5rem;
        height: 1.5rem;
-       animation: animate 15s linear infinite;
+       animation: animate 10s linear infinite;
        bottom: -5rem;
        box-shadow: var(--light-shadow);
        border-radius: 9%;
@@ -469,5 +457,60 @@ footer {
   100% {
     transform: translateY(-500px) rotate(360deg);
     opacity: 0;
+  }
+}
+
+/* Media Query for Small Screens (e.g., Mobile) */
+@media screen and (max-width: 768px) {
+  #nav {
+    display: flex;
+    justify-content: space-between;
+    .nav-toggle {
+      display: block;
+    }
+    .links-container {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 3.5rem;
+      width: 12rem;
+      height: 15rem;
+      padding: 1rem 0;
+      border-bottom-left-radius: 0.8rem;
+      background: var(--color-1);
+      box-shadow: inset -10px -10px 80px var(--color-5);
+      &.active {
+        display: flex;
+      }
+      & .header-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+  }
+
+  .light-mode {
+    & #nav > .links-container {
+      background: var(--color-26);
+      box-shadow: inset -10px -10px 80px var(--color-10);
+    }
+  }
+
+  #about {
+    & h1 {
+      font-size: 2.5rem;
+    }
+    & h2 {
+      font-size: 1.3rem;
+    }
+    & .about {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      & p {
+        font-size: 1.1rem;
+        line-height: 1.3rem;
+      }
+    }
   }
 }

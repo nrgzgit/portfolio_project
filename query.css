@@ -15,7 +15,9 @@
       height: 15rem;
       padding: 1rem 0;
       border-bottom-left-radius: 0.8rem;
-      backdrop-filter: blur(1000px);
+      background: var(--color-1);
+      /*backdrop-filter: blur(1000px);*/
+      /*-webkit-backdrop-filter: blur(1000px);*/
       &.active {
         display: flex;
       }
@@ -32,9 +34,13 @@
   }
 
  .light-mode {
-   & #nav > .links-container:hover {
-      box-shadow: inset -20px -20px 100px var(--color-22);
-    }
+   & #nav > .links-container {
+     background: transparent;
+     backdrop-filter: blur(1000px);
+     &:hover {
+       box-shadow: inset -20px -20px 100px var(--color-22);
+     }
+   }
   }
 
   #about {
@@ -48,7 +54,7 @@
       display: flex;
       justify-content: space-between;
       & p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         line-height: 1.3rem;
       }
     }

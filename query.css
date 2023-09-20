@@ -16,14 +16,9 @@
       padding: 1rem 0;
       border-bottom-left-radius: 0.8rem;
       background: var(--color-1);
-      /*backdrop-filter: blur(1000px);*/
-      /*-webkit-backdrop-filter: blur(1000px);*/
+      box-shadow: inset -20px -20px 100px var(--color-5);
       &.active {
         display: flex;
-      }
-      &:hover {
-        transition: var(--transition-l);
-        box-shadow: inset -20px -20px 100px var(--color-5);
       }
       & .header-links {
         display: flex;

@@ -278,8 +278,8 @@ main {
         height: 100%;
         opacity: 0;
         background: transparent;
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         transition: var(--transition-l);
         &:hover {
           opacity: 1;

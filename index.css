@@ -86,7 +86,7 @@ body {
   }
   & p {
     font-size: 1.3rem;
-    line-height: 1.6rem;
+    line-height: 1.5rem;
   }
   & span {
     font-size: 1rem;
@@ -150,8 +150,11 @@ header {
       border-color: transparent;
       transition: var(--transition-eo);
       cursor: pointer;
-      &:hover {
+      &:hover, &:focus{
         color: var(--color-21);
+      }
+      &:visited {
+        color: var(--color-10);
       }
     }
     /* Links & Mode Toggle Container */
@@ -164,7 +167,7 @@ header {
         & a {
           font-size: 1.3rem;
           &:hover {
-            color: var(--color-5);
+            color: var(--color-21);
             transition: var(--transition-eo);
           }
         }
@@ -232,7 +235,7 @@ main {
     grid-template-columns: 2fr 2fr;
     & p {
       margin-block-start: 1rem;
-      margin-block-end: 2rem;
+      margin-block-end: 1.5rem;
       padding-right: 2rem;
     }
   }
@@ -478,6 +481,14 @@ footer {
           border-color: var(--color-1);
         }
     }
+    & .nav-toggle {
+      &:hover, &:focus {
+        color: var(--color-1);
+      }
+      &:visited {
+        color: var(--color-10);
+      }
+    }
   }
 
   .floating-elements {
@@ -544,17 +555,19 @@ footer {
   #about {
     & h1 {
       font-size: 2.3rem;
+      letter-spacing: 0.2rem;
     }
     & h2 {
       font-size: 1.2rem;
+      letter-spacing: 0.2rem;
+    }
+    & p {
+      font-size: 1.1rem;
+      line-height: 1.2rem;
     }
     & .about {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      & p {
-        font-size: 1.1rem;
-        line-height: 1.3rem;
-      }
     }
   }
 }

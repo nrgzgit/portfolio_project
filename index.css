@@ -108,6 +108,8 @@ header {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: var(--light-shadow);
   z-index: 10;
+  animation: top 1s linear;
+  animation-delay: 1s;
   & nav {
     display: flex;
     align-items: center;
@@ -183,36 +185,14 @@ header {
     }
   }
 }
-
-.light-mode {
-  background: linear-gradient(-90deg, var(--color-25), var(--color-26), var(--color-21));
-  background-size: 200% 300%;
-  height: 100vh;
-  & h2 {
-    color: var(--color-10);
+@keyframes top {
+  0% {
+    transform: translateY(-2rem);
+    opacity: 0;
   }
-  & header {
-    box-shadow: var(--glow-shadow);
-  }
-  /* Floating Elements Change in Size & Color */
-  .floating-elements {
-    background: linear-gradient(to left, var(--color-29) 0%, rgb(255 255 255 / 30%) 40%);
-    backdrop-filter: saturate(1);
-    -webkit-backdrop-filter: saturate(1);
-    width: 100%;
-    & .floating-area li {
-      background: var(--color-13);
-      box-shadow: 10px 100px 10px var(--color-10);
-      border-radius: 50%;
-    }
-  }
-  #projects {
-    & .technologies > .instruments > li {
-      box-shadow: 0 2px 2px var(--color-10);
-    }
-  }
-  & footer {
-    box-shadow: var(--glow-shadow);
+  100% {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -221,6 +201,18 @@ main {
   place-items: center;
   min-height: 100vh;
   padding: 3.5rem 2rem;
+  animation: bottom 1s linear;
+  animation-delay: 1s;
+}
+@keyframes bottom {
+  0% {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .section {
@@ -406,7 +398,7 @@ footer {
        position: absolute;
        width: 1.5rem;
        height: 1.5rem;
-       animation: animate 10s linear infinite;
+       animation: float 10s linear infinite;
        bottom: -5rem;
        box-shadow: var(--light-shadow);
        border-radius: 9%;
@@ -449,7 +441,7 @@ footer {
    }
 }
 /* KeyFrames for Floating Elements Animation */
-@keyframes animate {
+@keyframes float {
   0% {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
@@ -457,6 +449,43 @@ footer {
   100% {
     transform: translateY(-500px) rotate(360deg);
     opacity: 0;
+  }
+}
+
+/* Light Mode Styles */
+.light-mode {
+  background: linear-gradient(-90deg, var(--color-25), var(--color-26), var(--color-21));
+  background-size: 200% 300%;
+  height: 100vh;
+  color: var(--color-1);
+  & h2 {
+    color: var(--color-10);
+  }
+  & header {
+    box-shadow: var(--glow-shadow);
+    & .links-container > ul > li > a {
+      color: var(--color-1);
+    }
+  }
+  /* Floating Elements Change in Size & Color */
+  .floating-elements {
+    background: linear-gradient(to left, var(--color-29) 0%, rgb(255 255 255 / 30%) 40%);
+    backdrop-filter: saturate(1);
+    -webkit-backdrop-filter: saturate(1);
+    width: 100%;
+    & .floating-area li {
+      background: var(--color-13);
+      box-shadow: 10px 100px 10px var(--color-10);
+      border-radius: 50%;
+    }
+  }
+  #projects {
+    & .technologies > .instruments > li {
+      box-shadow: 0 2px 2px var(--color-10);
+    }
+  }
+  & footer {
+    box-shadow: var(--glow-shadow);
   }
 }
 
@@ -499,10 +528,10 @@ footer {
 
   #about {
     & h1 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
     }
     & h2 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
     & .about {
       display: grid;

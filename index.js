@@ -5,8 +5,24 @@ const date = document.getElementById("date");
 
 // Dark / Light Mode Toggle ()
 function lightMode() {
-  document.body.classList.toggle("light-mode");
+  const body = document.body;
+  body.classList.toggle("light-mode");
+
+  // Check if light mode is enabled
+  const isLightMode = body.classList.contains("light-mode");
+
+  // Save the user's preference for light mode in localStorage
+  localStorage.setItem("lightMode", isLightMode);
 }
+
+// Check if user previously selected light mode and apply it on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLightMode = localStorage.getItem("lightMode");
+
+  if (savedLightMode === "true") {
+    document.body.classList.add("light-mode");
+  }
+});
 
 // Navigation Toggle - Media Query (appears on min width)
 navToggle.addEventListener("click", () => {
@@ -15,7 +31,7 @@ navToggle.addEventListener("click", () => {
 
 //Scroll Back To Top Button (appears on 800px scroll)
 function checkScrollPosition() {
-  if (window.scrollY > 800) {
+  if (window.scrollY > 300) {
     scrollTop.style.visibility = "visible";
   } else {
     scrollTop.style.visibility = "hidden";

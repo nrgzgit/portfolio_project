@@ -7,11 +7,7 @@ const date = document.getElementById("date");
 function lightMode() {
   const body = document.body;
   body.classList.toggle("light-mode");
-
-  // Check if light mode is enabled
   const isLightMode = body.classList.contains("light-mode");
-
-  // Save the user's preference for light mode in localStorage
   localStorage.setItem("lightMode", isLightMode);
 }
 
@@ -31,7 +27,7 @@ navToggle.addEventListener("click", () => {
 
 //Scroll Back To Top Button (appears on 800px scroll)
 function checkScrollPosition() {
-  if (window.scrollY > 300) {
+  if (window.scrollY > 800) {
     scrollTop.style.visibility = "visible";
   } else {
     scrollTop.style.visibility = "hidden";

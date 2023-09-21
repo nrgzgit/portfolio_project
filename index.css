@@ -35,7 +35,8 @@
   /* Box Shadows */
   --dark-shadow: 0 5px 15px var(--color-1);
   --light-shadow: 0 5px 10px var(--color-3);
-  --glow-shadow: 0 0 15px var(--color-10);
+  --dark-glow: 0 0 15px var(--color-1);
+  --light-glow: 0 0 15px var(--color-10);
 
 /* Transition Styles */
   --transition-l: all 0.3s linear;
@@ -164,6 +165,7 @@ header {
           font-size: 1.3rem;
           &:hover {
             color: var(--color-5);
+            transition: var(--transition-eo);
           }
         }
         /* Dark / Light Mode Toggle Switch Button */
@@ -178,7 +180,7 @@ header {
           &:hover {
             transform: scale(1.1);
             transition: var(--transition-eo);
-            box-shadow: var(--glow-shadow);
+            box-shadow: var(--light-glow);
           }
         }
       }
@@ -458,18 +460,28 @@ footer {
   background-size: 200% 300%;
   height: 100vh;
   color: var(--color-1);
-  & h2 {
+
+  & h2, & h3, & span {
     color: var(--color-10);
   }
+
   & header {
-    box-shadow: var(--glow-shadow);
-    & .links-container > ul > li > a {
-      color: var(--color-1);
+    box-shadow: var(--light-glow);
+    & .links-container > ul > li {
+      & a {
+        color: var(--color-1);
+        &:hover {
+          color: var(--color-10);
+        }
+      }
+        & .mode-toggle {
+          border-color: var(--color-1);
+        }
     }
   }
-  /* Floating Elements Change in Size & Color */
+
   .floating-elements {
-    background: linear-gradient(to left, var(--color-29) 0%, rgb(255 255 255 / 30%) 40%);
+    background: linear-gradient(to left, var(--color-21) 0%, rgb(255 255 255 / 30%) 40%);
     backdrop-filter: saturate(1);
     -webkit-backdrop-filter: saturate(1);
     width: 100%;
@@ -479,13 +491,16 @@ footer {
       border-radius: 50%;
     }
   }
+
   #projects {
     & .technologies > .instruments > li {
+      color: var(--color-10);
       box-shadow: 0 2px 2px var(--color-10);
     }
   }
+
   & footer {
-    box-shadow: var(--glow-shadow);
+    box-shadow: var(--light-glow);
   }
 }
 

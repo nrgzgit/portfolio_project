@@ -185,7 +185,7 @@ header {
 }
 
 .light-mode {
-  background: linear-gradient(-90deg, var(--color-25), var(--color-26), var(--color-27));
+  background: linear-gradient(-90deg, var(--color-25), var(--color-26), var(--color-21));
   background-size: 200% 300%;
   height: 100vh;
   & h2 {
@@ -197,8 +197,8 @@ header {
   /* Floating Elements Change in Size & Color */
   .floating-elements {
     background: linear-gradient(to left, var(--color-29) 0%, rgb(255 255 255 / 30%) 40%);
-    backdrop-filter: saturate(2);
-    -webkit-backdrop-filter: saturate(2);
+    backdrop-filter: saturate(1);
+    -webkit-backdrop-filter: saturate(1);
     width: 100%;
     & .floating-area li {
       background: var(--color-13);
@@ -492,7 +492,7 @@ footer {
 
   .light-mode {
     & #nav > .links-container {
-      background: var(--color-26);
+      background: var(--color-21);
       box-shadow: inset -10px -10px 80px var(--color-10);
     }
   }

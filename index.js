@@ -1,7 +1,7 @@
 const navToggle = document.querySelector(".nav-toggle");
 const linksContainer = document.querySelector(".links-container");
 const scrollTop = document.querySelector(".scrollTop-btn");
-const date = document.getElementById("date");
+// const date = document.getElementById("date");
 
 // Dark / Light Mode Toggle ()
 function lightMode() {
@@ -14,7 +14,6 @@ function lightMode() {
 // Check if user previously selected light mode and apply it on page load
 document.addEventListener("DOMContentLoaded", () => {
   const savedLightMode = localStorage.getItem("lightMode");
-
   if (savedLightMode === "true") {
     document.body.classList.add("light-mode");
   }
@@ -33,10 +32,7 @@ function checkScrollPosition() {
     scrollTop.style.visibility = "hidden";
   }
 }
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}
 window.addEventListener("scroll", checkScrollPosition);
 
 // Footer Date
-date.innerHTML = new Date().getFullYear();
+// date.innerHTML = new Date().getFullYear();
